@@ -44,5 +44,6 @@ export interface ITelegramUser {
      isProgressVisible: boolean;
      isActive: boolean;
    };
+   /* eslint-disable @typescript-eslint/no-explicit-any */
    HapticFeedback: any;
  };
