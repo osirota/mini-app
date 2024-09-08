@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { useTelegram } from '@/app/lib/TelegramProvider';
+import React, { useState } from 'react';
 import Participant from '../Participant';
 
 interface ParticipantAnimationProps {
@@ -46,29 +46,33 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
+   <>
+      <div>
          <p className="text-cyan-500">{webApp?.initDataUnsafe.auth_date}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.hash}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.query_id}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.first_name}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.id}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.language_code}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.last_name}</p>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.username}</p>
-        <div className="flex" style={{ 
-          transform: `translateX(${translateX}px)`,
-        }}>
-          {participants.map((participant, index) => (
-            <Participant key={index} participant={participant} />
-          ))}
-        </div>
-        <div className="absolute border-4 border-blue-700 w-20 h-20">
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.hash}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.query_id}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.first_name}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.id}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.language_code}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.last_name}</p>
+            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.username}</p>
+         </div>
+         <div className="flex flex-col">
+         <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
+         <div className="flex" style={{ 
+            transform: `translateX(${translateX}px)`,
+         }}>
+            {participants.map((participant, index) => (
+               <Participant key={index} participant={participant} />
+            ))}
+         </div>
+         <div className="absolute border-4 border-blue-700 w-20 h-20">
 
-        </div>
+         </div>
+      </div>
+      <button onClick={handleSpin}>spin</button>
     </div>
-    <button onClick={handleSpin}>spin</button>
-    </div>
+   </>
   );
 };
 
