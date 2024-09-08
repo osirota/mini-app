@@ -36,7 +36,7 @@ function easeOutCubic(t: number) {
  }
 
 const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participants }) => {
-   const { webApp } = useTelegram();
+   const { webApp, user } = useTelegram();
    const [translateX, setTranslateX] = useState(1401);
 
    const handleSpin = () => {
@@ -48,14 +48,19 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
   return (
    <div className="flex flex-col">
       <div>
-         <p className="text-cyan-500">{webApp?.initDataUnsafe.auth_date}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.hash}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.query_id}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.first_name}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.id}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.language_code}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.last_name}</p>
-            <p className="text-cyan-500">{webApp?.initDataUnsafe.user.username}</p>
+         <p className="text-cyan-500">auth_date: {webApp?.initDataUnsafe.auth_date}</p>
+            <p className="text-cyan-500 pl-5 pt-2">hash: {webApp?.initDataUnsafe.hash}</p>
+            <p className="text-cyan-500 pl-5 pt-2">query_id: {webApp?.initDataUnsafe.query_id}</p>
+            <p className="text-cyan-500 pl-5 pt-2">first_name: {webApp?.initDataUnsafe.user.first_name}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user_id: {webApp?.initDataUnsafe.user.id}</p>
+            <p className="text-cyan-500 pl-5 pt-2">language_code: {webApp?.initDataUnsafe.user.language_code}</p>
+            <p className="text-cyan-500 pl-5 pt-2">last_name: {webApp?.initDataUnsafe.user.last_name}</p>
+            <p className="text-cyan-500 pl-5 pt-2">username: {webApp?.initDataUnsafe.user.username}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user:first_name: {user?.first_name}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user:id: {user?.id}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user:language_code: {user?.language_code}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user:last_name: {user?.last_name}</p>
+            <p className="text-cyan-500 pl-5 pt-2">user:username: {user?.username}</p>
          </div>
          <div className="flex flex-col">
          <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
