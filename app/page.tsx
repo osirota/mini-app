@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import Roulette from './components/Roulette'
 
 const participants = [

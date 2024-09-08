@@ -1,4 +1,3 @@
-// components/ParticipantAnimation.tsx
 import React, { useState } from 'react';
 import Participant from '../Participant';
 
@@ -12,7 +11,6 @@ function easeOutCubic(t: number) {
 
  function animatePosition(durationInSeconds: number, callback: (position: number) => void) {
    const startPosition = 1401;
-   const endPosition = -1401;
    const totalDistance = startPosition * 2;
    const durationInMs = durationInSeconds * 1000;
    const startTime = performance.now();
