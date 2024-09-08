@@ -36,7 +36,7 @@ function easeOutCubic(t: number) {
  }
 
 const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participants }) => {
-   const { user, webApp } = useTelegram();
+   const { webApp } = useTelegram();
   const [translateX, setTranslateX] = useState(1401);
 
   const handleSpin = () => {

@@ -5,7 +5,7 @@ export interface ITelegramUser {
    last_name: string;
    username: string;
    language_code: string;
- }
+ };
  
  export interface IWebApp {
    initData: string;
@@ -45,4 +45,4 @@ export interface ITelegramUser {
      isActive: boolean;
    };
    HapticFeedback: any;
- }
+ };
