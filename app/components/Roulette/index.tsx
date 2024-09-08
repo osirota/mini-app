@@ -37,16 +37,16 @@ function easeOutCubic(t: number) {
 
 const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participants }) => {
    const { webApp } = useTelegram();
-  const [translateX, setTranslateX] = useState(1401);
+   const [translateX, setTranslateX] = useState(1401);
 
-  const handleSpin = () => {
+   const handleSpin = () => {
    animatePosition(10, (position) => {
       setTranslateX(position); // Обновляем значение translateX
-    });
-  };
+      });
+   };
 
   return (
-   <>
+   <div className="flex flex-col">
       <div>
          <p className="text-cyan-500">{webApp?.initDataUnsafe.auth_date}</p>
             <p className="text-cyan-500">{webApp?.initDataUnsafe.hash}</p>
@@ -72,7 +72,7 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
       </div>
       <button onClick={handleSpin}>spin</button>
     </div>
-   </>
+   </div>
   );
 };
 
