@@ -39,6 +39,8 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
    const { webApp, user } = useTelegram();
    const [translateX, setTranslateX] = useState(1401);
 
+   const stringWebApp = JSON.stringify(webApp)
+
    const handleSpin = () => {
    animatePosition(10, (position) => {
       setTranslateX(position); // Обновляем значение translateX
@@ -49,6 +51,7 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
    <div className="flex flex-col">
       <div>
          <p className="text-cyan-500">auth_date: {webApp?.initDataUnsafe.auth_date}</p>
+            <p className="text-cyan-500 pl-5 pt-2">{stringWebApp}</p>
             <p className="text-cyan-500 pl-5 pt-2">user:first_name: {user?.first_name}</p>
             <p className="text-cyan-500 pl-5 pt-2">user:id: {user?.id}</p>
             <p className="text-cyan-500 pl-5 pt-2">user:language_code: {user?.language_code}</p>
