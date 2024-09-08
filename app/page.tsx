@@ -1,5 +1,6 @@
 'use client'
-import Roulette from './components/Roulette'
+import Roulette from './components/Roulette';
+import { TelegramProvider } from './lib/TelegramProvider';
 
 const participants = [
   'windner 1',
@@ -45,10 +46,12 @@ const participants = [
 ]
 
 export default function Home() {
-  console.log('lengt', participants.length);
   return (
-    <div className="flex justify-center items-center h-screen bg-black-600">
-      <Roulette participants={participants} />
-    </div>
+    <TelegramProvider>
+      <div className="flex justify-center items-center h-screen bg-black-600">
+          <Roulette participants={participants} />
+      </div>
+    </TelegramProvider>
+
   );
 }

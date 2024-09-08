@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTelegram } from '@/app/lib/TelegramProvider';
 import Participant from '../Participant';
 
 interface ParticipantAnimationProps {
@@ -35,6 +36,7 @@ function easeOutCubic(t: number) {
  }
 
 const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participants }) => {
+   const { user, webApp } = useTelegram();
   const [translateX, setTranslateX] = useState(1401);
 
   const handleSpin = () => {
@@ -46,6 +48,14 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
   return (
     <div className="flex flex-col">
       <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.auth_date}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.hash}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.query_id}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.first_name}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.id}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.language_code}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.last_name}</p>
+         <p className="text-cyan-500">{webApp?.initDataUnsafe.user.username}</p>
         <div className="flex" style={{ 
           transform: `translateX(${translateX}px)`,
         }}>
