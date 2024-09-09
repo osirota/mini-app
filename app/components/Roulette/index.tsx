@@ -49,28 +49,18 @@ const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participant
 
   return (
    <div className="flex flex-col">
-      <div>
-         <p className="text-cyan-500">auth_date: {webApp?.initDataUnsafe.auth_date}</p>
-            <p className="text-cyan-500 pl-5 pt-2">{stringWebApp}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:first_name: {user?.first_name}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:id: {user?.id}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:language_code: {user?.language_code}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:last_name: {user?.last_name}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:username: {user?.username}</p>
-            <p className="text-cyan-500 pl-5 pt-2">user:photo: {user?.photo_url}</p>
-         </div>
-         <div className="flex flex-col">
-         <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
-         <div className="flex" style={{ 
-            transform: `translateX(${translateX}px)`,
-         }}>
-            {participants.map((participant, index) => (
-               <Participant key={index} participant={participant} />
-            ))}
-         </div>
-         <div className="absolute border-4 border-blue-700 w-20 h-20">
+      <div className="flex flex-col">
+      <div className="relative w-96 h-24 overflow-hidden flex justify-center items-center">
+      <div className="flex" style={{ 
+         transform: `translateX(${translateX}px)`,
+      }}>
+         {participants.map((participant, index) => (
+            <Participant key={index} participant={participant} />
+         ))}
+      </div>
+      <div className="absolute border-4 border-blue-700 w-20 h-20">
 
-         </div>
+      </div>
       </div>
       <button onClick={handleSpin}>spin</button>
     </div>
