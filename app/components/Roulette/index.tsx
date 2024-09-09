@@ -1,4 +1,4 @@
-import { useTelegram } from '@/app/lib/TelegramProvider';
+// import { useTelegram } from '@/app/lib/TelegramProvider';
 import React, { useState } from 'react';
 import Participant from '../Participant';
 
@@ -36,10 +36,10 @@ function easeOutCubic(t: number) {
  }
 
 const ParticipantAnimation: React.FC<ParticipantAnimationProps> = ({ participants }) => {
-   const { webApp, user } = useTelegram();
+   // const { webApp, user } = useTelegram();
    const [translateX, setTranslateX] = useState(1401);
 
-   const stringWebApp = JSON.stringify(webApp)
+   // const stringWebApp = JSON.stringify(webApp)
 
    const handleSpin = () => {
    animatePosition(10, (position) => {
