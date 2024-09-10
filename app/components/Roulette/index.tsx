@@ -1,9 +1,10 @@
 // import { useTelegram } from '@/app/lib/TelegramProvider';
 import React, { useState } from 'react';
 import Participant from '../Participant';
+import { Bet } from '@/app/types/Bet';
 
 interface ParticipantAnimationProps {
-  participants: string[];
+  participants: Bet[];
 }
 
 function easeOutCubic(t: number) {

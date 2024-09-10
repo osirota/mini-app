@@ -1,0 +1,1 @@
+export const DEFAULT_TIMER_START = 500;

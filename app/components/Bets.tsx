@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface Bet {
-  amount: string;
-  id: string;
-  percentage: string;
-}
+import { Bet } from '../types/Bet';
 
 interface BetsProps {
   bets: Bet[];
@@ -18,7 +13,7 @@ const Bets: React.FC<BetsProps> = ({ bets }) => {
         {bets.length === 0 ? (
           <li className="text-center text-gray-400">Ставок пока нет</li>
         ) : (
-          bets.map((bet, index) => (
+          bets.sort((a, b) => b.amount - a.amount).map((bet, index) => (
             <li
               key={index}
               className="flex justify-between items-center bg-gray-700 p-2 rounded"
