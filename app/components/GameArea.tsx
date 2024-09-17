@@ -41,7 +41,7 @@ const createBetArray = (bets: Bet[], totalElements: number): Bet[] => {
 };
 
 let timerId: NodeJS.Timeout;
-const GameArea: React.FC<GameAreaProps> = ({ onPlaceBet, bets, setBets }) => {
+const GameArea: React.FC<GameAreaProps> = ({ onPlaceBet, bets }) => {
   const [betAmount, setBetAmount] = useState<number | string>('');
   const [timeLeft, setTimeLeft] = useState<number>(DEFAULT_TIMER_START);
   const [winnersArray, setWinnersArray] = useState<Bet[]>([]);

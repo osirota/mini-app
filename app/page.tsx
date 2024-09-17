@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import GameArea from './components/GameArea';
 import Bets from './components/Bets';
