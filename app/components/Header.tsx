@@ -1,5 +1,6 @@
-import React from 'react';
+import { LoginButton } from '@telegram-auth/react';
 import Link from 'next/link';
+import React from 'react';
 import { HOME, PROFILE } from '../constants/routes';
 
 const Header: React.FC = () => {
@@ -12,6 +13,16 @@ const Header: React.FC = () => {
         </div>
         <div className="text-sm bg-red-600 px-2 py-1 rounded">0.00$</div>
         <Link href={PROFILE} className="bg-pink-600 w-8 h-8 rounded-full"></Link>
+        <LoginButton
+                botUsername="asd"
+                onAuthCallback={(data) => {
+                  console.log('data', data)
+                }}
+                buttonSize="large" // "large" | "medium" | "small"
+                cornerRadius={5} // 0 - 20
+                showAvatar={true} // true | false
+                lang="en"
+            />
       </div>
     </div>
   );
