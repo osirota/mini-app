@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         <div className="text-sm bg-red-600 px-2 py-1 rounded">0.00$</div>
         <Link href={PROFILE} className="bg-pink-600 w-8 h-8 rounded-full"></Link>
         <LoginButton
-                botUsername="testtgminiappnext"
+                botUsername="testminiappasdasdas12312312bot"
                 onAuthCallback={(data) => {
                   console.log('data', data)
                 }}
